@@ -92,4 +92,24 @@ namespace ai
         virtual std::vector<std::string> GetUsedValues() { return {"duel target"}; }
 #endif 
     };
+
+    class AttackArenaTargetAction : public AttackAction
+    {
+    public:
+        AttackArenaTargetAction(PlayerbotAI* ai, std::string name = "attack arena target") : AttackAction(ai, name) {}
+    public:
+        virtual bool Execute(Event& event) override;
+        virtual bool isUseful() override;
+
+#ifdef GenerateBotHelp
+        virtual std::string GetHelpName() { return "attack arena target"; }
+        virtual std::string GetHelpDescription()
+        {
+            return "This action makes the bot attack its selected arena target.";
+        }
+        virtual std::vector<std::string> GetUsedActions() { return {}; }
+        virtual std::vector<std::string> GetUsedValues() { return {"arena target"}; }
+#endif
+    };
 }
+

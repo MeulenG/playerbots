@@ -272,3 +272,14 @@ bool AttackDuelOpponentAction::Execute(Event& event)
     Player* requester = event.getOwner() ? event.getOwner() : GetMaster();
     return Attack(requester, AI_VALUE(Unit*, "duel target"));
 }
+
+bool AttackArenaTargetAction::isUseful()
+{
+    return AI_VALUE(Unit*, "arena target");
+}
+
+bool AttackArenaTargetAction::Execute(Event& event)
+{
+    Player* requester = event.getOwner() ? event.getOwner() : GetMaster();
+    return Attack(requester, AI_VALUE(Unit*, "arena target"));
+}
