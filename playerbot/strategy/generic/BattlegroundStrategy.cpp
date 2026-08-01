@@ -241,6 +241,9 @@ void ArenaStrategy::InitNonCombatTriggers(std::list<TriggerNode*> &triggers)
     triggers.push_back(new TriggerNode(
         "no possible targets",
         NextAction::array(0, new NextAction("arena tactics", 1.0f), NULL)));
+    triggers.push_back(new TriggerNode(
+        "enemy player near",
+        NextAction::array(0, new NextAction("attack arena target", 85.0f), NULL)));
 }
 
 void ArenaStrategy::InitCombatTriggers(std::list<TriggerNode*>& triggers)

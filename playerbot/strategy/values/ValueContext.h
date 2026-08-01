@@ -108,6 +108,7 @@
 #include "WorldBuffTravelValues.h"
 #include "AvoidCreatureListValue.h"
 #include "CreatureIdValue.h"
+#include "ArenaTargetValue.h"
 
 namespace ai
 {
@@ -312,6 +313,7 @@ namespace ai
             creators["bg type"] = [](PlayerbotAI* ai) { return new BgTypeValue(ai); };
             creators["rpg bg type"] = [](PlayerbotAI* ai) { return new RpgBgTypeValue(ai); };
             creators["arena type"] = [](PlayerbotAI* ai) { return new ArenaTypeValue(ai); };
+            creators["arena target"] = [](PlayerbotAI* ai) { return new ArenaTargetValue(ai); };
             creators["bg role"] = [](PlayerbotAI* ai) { return new BgRoleValue(ai); };
             creators["bg master"] = [](PlayerbotAI* ai) { return new BgMasterValue(ai); };
             creators["enemy flag carrier"] = [](PlayerbotAI* ai) { return new FlagCarrierValue(ai, false, true); };
